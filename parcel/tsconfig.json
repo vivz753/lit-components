@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "lib": ["es2018", "dom"],
+    "strict": true,
+    "esModuleInterop": false,
+    "outDir": "out-tsc",
+    "rootDir": "./"
+  }
+  ,
+  "include": ["./src/**/*.ts"]
+}

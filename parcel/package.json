@@ -1,0 +1,18 @@
+{
+  "name": "lit-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^2.0.0",
+    "parcel": "^2.0.0-rc.0",
+    "tsc": "^2.0.3",
+    "typescript": "^4.4.3"
+  }
+}
