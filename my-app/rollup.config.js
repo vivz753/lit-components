@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import { babel } from '@rollup/plugin-babel';
+import postcss from 'rollup-plugin-postcss';
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -18,6 +19,7 @@ export default {
 	plugins: [
 		resolve(), // tells Rollup how to find date-fns in node_modules
 		commonjs(), // converts date-fns to ES modules
+    postcss(),
     typescript({
       include: ['src/**/*.ts']  
     }),
