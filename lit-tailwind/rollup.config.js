@@ -16,6 +16,10 @@ export default {
 		format: 'es',
 		sourcemap: true
 	},
+  watch: {
+    chokidar: true,
+    include: 'src/**'
+  },
 	plugins: [
 		resolve(), // tells Rollup how to find date-fns in node_modules
 		commonjs(), // converts date-fns to ES modules

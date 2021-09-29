@@ -17,6 +17,7 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/extensions": 0,
   },
 };
