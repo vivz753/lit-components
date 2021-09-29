@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "import/extensions": 0,
+    "no-nested-ternary": 0,
   },
 };
