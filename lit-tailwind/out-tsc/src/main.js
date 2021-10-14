@@ -15,10 +15,13 @@ let AppComponent = class AppComponent extends LitElement {
     }
     render() {
         return html `
-      <div class="bg-yellow-100 h-screen w-full">
-      <h1 class="mx-auto my-4 py-4 text-center shadow-lg text-xl w-1/2 bg-red-500">IDS Components</h1>
-      <ids-card text="hello" color="blue"></ids-card>
-      <ids-input value="sh"></ids-input>
+      <div class="bg-yellow-100 flex align-center h-screen w-full">
+        <div class="container my-auto w-full flex justify-center align-center">
+          <ids-card text="hello" color="blue"></ids-card>
+          <ids-input label="Pokedex" clearable placeholder="Type any Pokemon..." value=""></ids-input>
+          <ids-input label="Pokedex" disabled placeholder="Type any Pokemon..." value="Regice"></ids-input>
+          <ids-input label="Pokedex" clearable readOnly placeholder="Type any Pokemon..." value="Snorlax"></ids-input>
+        </div>
       </div>
     `;
     }

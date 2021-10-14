@@ -31,7 +31,7 @@ class IdsInput extends LitElement {
   disabled?: boolean = false;
 
   @property({ type: Boolean, reflect: true })
-  clearable?: boolean = true;
+  clearable?: boolean = false;
 
   createRenderRoot() {
     return this;
@@ -45,6 +45,21 @@ class IdsInput extends LitElement {
     this.value = "";
   }
 
+  clearableTemplate() {
+    return html`
+      <div
+        class="absolute right-0 mr-1 h-8 w-8 flex justify-center align-items"
+      >
+        <span
+          @click="${this.clearValue}"
+          class="text-center text-red-500 cursor-pointer rounded-full my-auto bg-pink-100 bg-opacity-50 hover:bg-red-500 hover:text-pink-100 h-6 w-6"
+        >
+          x
+        </span>
+      </div>
+    `;
+  }
+
   render() {
     return html`
       <div class="flex flex-col items-start border-1 border-black justify-start w-full">
@@ -56,7 +71,8 @@ class IdsInput extends LitElement {
         </label>
         <div 
           class="flex flex-row mx-2 relative rounded-sm
-            ${this.clearable && "border-red-500 bg-white"}
+            ${this.clearable && "border-red-500"}
+            ${this.disabled || this.readOnly ? "bg-gray-300" : "bg-white"}
         ">
           <input
             type="text"
@@ -76,20 +92,7 @@ class IdsInput extends LitElement {
             @input="${this.updateValue}"
           >
           </input>
-          ${
-            this.value && this.clearable
-              ? html`<div
-                  class="absolute right-0 mr-1 h-8 w-8 flex justify-center align-items"
-                >
-                  <span
-                    @click="${this.clearValue}"
-                    class="text-center text-red-500 cursor-pointer rounded-full my-auto bg-pink-100 bg-opacity-50 hover:bg-red-500 hover:text-pink-100 h-6 w-6"
-                  >
-                    x
-                  </span>
-                </div>`
-              : ""
-          }
+          ${this.value && this.clearable ? this.clearableTemplate() : ""}
         </div>
       </div>
     `;
