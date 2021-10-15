@@ -5,6 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import { babel } from "@rollup/plugin-babel";
 import postcss from "rollup-plugin-postcss";
 import livereload from "rollup-plugin-livereload";
+import serve from "rollup-plugin-serve";
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -32,6 +33,10 @@ export default {
     babel({
       babelHelpers: "bundled",
       exclude: "node_modules/**",
+    }),
+    serve({
+      contentBase: "public",
+      historyApiFallback: true,
     }),
     production && terser({ format: { comments: false } }), // minify, but only in production
   ],

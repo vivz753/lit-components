@@ -17,8 +17,9 @@ class IdsCard extends LitElement {
 
   render() {
     return html`
-      <div class="bg-${this.color}-500 rounded w-96 h-64 mx-auto shadow-lg p-8 text-xl text-white">
+      <div class="bg-${this.color}-500 rounded w-96 h-64 mx-auto shadow-lg p-8 text-xl text-black">
         ${this.text}
+        <slot></slot>
       </div>
     `;
   }
