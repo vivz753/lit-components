@@ -11,12 +11,20 @@ export default class AppComponent extends LitElement {
 
   render() {
     return html`
-      <div class="bg-yellow-100 flex align-center h-screen w-full">
-        <nav>Navigation</nav>
-        <div class="container my-auto w-full flex justify-center align-center">
-          <slot>Insert Component Here</slot>
+      <div class="bg-yellow-100 flex align-center justify-center h-screen w-full">
+        <div class="container my-auto w-full flex flex-col justify-center align-center border-2 border-red-500">
+          <div class="w-1/3 my-12 mx-auto border-2 border-green-500">
+            <ids-input clearable value="MewTwo"></ids-input>
+          </div>
+          <div class="w-1/3 my-12 mx-auto">
+            <ids-input clearable disabled value="Clearable Disabled Value"></ids-input>
+          </div>
+          <div class="w-1/3 my-12 mx-auto">
+            <ids-input disabled value="Disabled Value"></ids-input>
+          </div>
+          <ids-card color="red" text="hi"></ids-card>
         </div>
-      </div>
+      </div> 
     `;
   }
 }

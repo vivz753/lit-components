@@ -5,7 +5,7 @@ import { customElement, property } from "lit/decorators.js";
 
 const defaultColor = `text-pink-300 placeholder-pink-200`;
 const labelStyle = `text-lg mx-2 block`;
-const inputStyle = `text-base block relative rounded-sm h-8 p-2 focus:outline-none`;
+const inputStyle = `w-full text-base block relative rounded-sm h-8 p-2 focus:outline-none`;
 
 @customElement("ids-input")
 class IdsInput extends LitElement {
@@ -62,7 +62,7 @@ class IdsInput extends LitElement {
 
   render() {
     return html`
-      <div class="flex flex-col items-start border-1 border-black justify-start w-full">
+      <div class="flex flex-col w-full justify-center">
         <label class="
           ${labelStyle}
           ${this.readOnly || this.disabled ? "text-gray-400" : defaultColor} 
@@ -79,11 +79,7 @@ class IdsInput extends LitElement {
             class="
               ${inputStyle}
               ${this.clearable ? "mr-8" : "focus:ring-2 focus:ring-pink-400"}
-              ${
-                this.readOnly || this.disabled
-                  ? "bg-gray-300 text-white"
-                  : defaultColor
-              }
+              ${this.readOnly || this.disabled ? "bg-gray-300" : defaultColor}
             "
             .placeholder="${this.placeholder}"
             .value="${this.value}"
